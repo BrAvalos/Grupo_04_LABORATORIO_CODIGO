@@ -13,7 +13,7 @@
     </div>
     <div id="fixed" style="padding-left:140px; padding-top: 50px;">
 		<h2>Pregunta 2</h2>
-
+		<p>Mediante un archivo XML, analizar dicho archivo XML con un script</p><br><br>
 		<p id="demo">Texto Inicial.</p>
 		<p id="demo2"></p>
 
@@ -30,7 +30,7 @@ function loadDoc() {
     xmlDoc = xmlhttp.responseXML;
     document.getElementById("demo").innerHTML = xmlDoc;
 
-    xmlhttp.onload = function() {    	
+    xmlhttp.onload = function() {
     	const x = xmlDoc.getElementsByTagName("pais");
 		let texto ="Archivo: <br>";
 		for (let i = 0; i < x.length; i++) { 
@@ -40,6 +40,8 @@ function loadDoc() {
 		  }
 		 document.getElementById("demo2").innerHTML = texto;
 	}
+	xmlhttp.open("GET", "ejemplo.xml", false);
+    xmlhttp.send();
 }
 </script>
 
