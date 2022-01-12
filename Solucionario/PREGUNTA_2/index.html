@@ -15,6 +15,7 @@
 		<h2>Pregunta 2</h2>
 
 		<p id="demo">Texto Inicial.</p>
+		<p id="demo2"></p>
 
 		<button type="button" onclick="loadDoc()">Analizar documento</button>
 		<br><br>
@@ -24,20 +25,21 @@
 
 function loadDoc() {
     xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function() {
-    	const xmlDoc = xmlhttp.responseXML;    	
-    	const x = xmlDoc.getElementsByTagName("pais");
-		let texto ="Texto cambiado";
-		for (let i = 0; i <x.length; i++) { 
-			texto += x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
-		    x[i].getElementsByTagName("nombre_pais")[0].childNodes[0].nodeValue +
-		    x[i].getElementsByTagName("capital")[0].childNodes[0].nodeValue;
-		  }
-		 document.getElementById("demo").innerHTML = texto;
-	}
     xmlhttp.open("GET", "ejemplo.xml", false);
     xmlhttp.send();
-    
+    xmlDoc = xmlhttp.responseXML;
+    document.getElementById("demo").innerHTML = xmlDoc;
+
+    xmlhttp.onload = function() {    	
+    	const x = xmlDoc.getElementsByTagName("pais");
+		let texto ="Archivo: <br>";
+		for (let i = 0; i < x.length; i++) { 
+			texto += x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue + " | " +
+		    x[i].getElementsByTagName("nombre_pais")[0].childNodes[0].nodeValue + " | " +
+		    x[i].getElementsByTagName("capital")[0].childNodes[0].nodeValue + "<br>";
+		  }
+		 document.getElementById("demo2").innerHTML = texto;
+	}
 }
 </script>
 
