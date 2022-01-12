@@ -1,0 +1,44 @@
+{
+	"regiones": [{
+			"region": "Sierra",
+			"name": "Pichincha"
+		},
+		{
+			"region": "Sierra",
+			"name": "Azuay"
+		},
+		{
+			"region": "Sierra",
+			"name": "Imbabura"
+		},
+		{
+			"region": "Sierra",
+			"name": "Cotopaxi"
+		},
+
+		{
+			"region": "Costa",
+			"name": "Guayas"
+		},
+		{
+			"region": "Costa",
+			"name": "Manabi"
+		},
+		{
+			"region": "Costa",
+			"name": "Esmeraldas"
+		},
+		{
+			"region": "Oriente",
+			"name": "Napo"
+		},
+		{
+			"region": "Oriente",
+			"name": "Tena"
+		},
+		{
+			"region": "Oriente",
+			"name": "Pastaza"
+		}
+	]
+}
