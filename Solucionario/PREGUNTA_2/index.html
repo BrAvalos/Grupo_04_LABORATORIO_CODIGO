@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+		<style type="text/css">
+			#background{position:absolute; width:99%; height:130%;}
+			#fixed {position:absolute; top: 0px; left: 0px;}
+		</style>
+<head>
+  <title>Grupo04-Pregunta 2</title>
+</head>
+<body>
+	<div>
+      <img id="background" src="../../Imagenes/fondo.jpg"/> 
+    </div>
+    <div id="fixed" style="padding-left:140px; padding-top: 50px;">
+		<h2>Pregunta 2</h2>
+
+		<p id="demo">Texto Inicial.</p>
+
+		<button type="button" onclick="loadDoc()">Analizar documento</button>
+		<br><br>
+		<button onclick="window.location.href='../../index.html'">Menu principal</button>
+    </div>	
+<script>
+
+function loadDoc() {
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "ejemplo.xml", false);
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+    document.getElementById("demo").innerHTML = xmlDoc;
+}
+</script>
+
+</body>
+</html>
